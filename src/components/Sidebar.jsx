@@ -23,66 +23,75 @@ export default function Sidebar() {
   return (
     <>
       {/* MOBILE NAVBAR */}
-      <div className="md:hidden fixed top-0 left-0 right-0 bg-white shadow-sm flex justify-between items-center px-4 py-3 z-50">
+      <div className="md:hidden fixed top-0 left-0 right-0 bg-white shadow-sm flex justify-between items-center px-5 py-4 z-50">
         <h1 className="text-xl font-bold text-gray-900">Vishal</h1>
+
         <button
           onClick={() => setOpen(!open)}
-          className="text-gray-700 text-2xl"
+          className="text-gray-700 text-2xl focus:outline-none"
         >
           ☰
         </button>
       </div>
 
-      {/* MOBILE MENU */}
+      {/* MOBILE MENU DROPDOWN */}
       {open && (
-        <div className="md:hidden fixed top-14 left-0 right-0 bg-white shadow-lg px-6 py-4 space-y-5 z-50">
-          {[
-            "hero",
-            "about",
-            "skills",
-            "projects",
-            "experience",
-            "achievements",
-            "certifications",
-            "contact",
-          ].map((id) => (
-            <a
-              key={id}
-              href={`#${id}`}
-              onClick={() => setOpen(false)}
-              className={linkClass(id)}
-            >
-              {id.charAt(0).toUpperCase() + id.slice(1)}
-            </a>
-          ))}
+        <div className="md:hidden fixed top-14 left-0 right-0 bg-white shadow-lg z-50 px-6 py-6 space-y-6">
+          {/* Navigation Links */}
+          <nav className="flex flex-col space-y-4 text-lg">
+            {[
+              { id: "hero", label: "Home" },
+              { id: "about", label: "About" },
+              { id: "skills", label: "Skills" },
+              { id: "projects", label: "Projects" },
+              { id: "experience", label: "Experience" },
+              { id: "achievements", label: "Achievements" },
+              { id: "certifications", label: "Certifications" },
+              { id: "contact", label: "Contact" },
+            ].map((item) => (
+              <a
+                key={item.id}
+                href={`#${item.id}`}
+                onClick={() => setOpen(false)}
+                className={`block py-2 px-2 rounded-md ${
+                  activeSection === item.id
+                    ? "bg-blue-50 text-blue-600 font-semibold"
+                    : "text-gray-800"
+                }`}
+              >
+                {item.label}
+              </a>
+            ))}
+          </nav>
 
-          <div className="flex gap-4 pt-3 border-t border-gray-200">
+          {/* Social Links */}
+          <div className="flex justify-between pt-3 border-t border-gray-200">
             <a
               href="https://www.linkedin.com/in/vishalaprabhu08"
               target="_blank"
-              className="text-blue-700"
+              className="text-blue-600 hover:text-blue-800"
             >
               LinkedIn
             </a>
             <a
               href="https://github.com/vishalps08"
               target="_blank"
-              className="text-gray-800"
+              className="text-gray-800 hover:text-blue-600"
             >
               GitHub
             </a>
           </div>
 
+          {/* Resume Button */}
           <a
             href="/Vishal-Ashok-Prabhu-Resume.pdf"
             download
-            className="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg mt-2"
+            className="block bg-blue-600 text-white text-center py-3 rounded-lg shadow hover:bg-blue-700 transition mt-3"
           >
             Resume
           </a>
         </div>
       )}
-
       {/* DESKTOP SIDEBAR */}
       <aside
         className="
