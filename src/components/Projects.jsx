@@ -12,7 +12,7 @@ export default function Projects() {
         "Role-based employee management system with CRUD operations, authentication, and structured workflow.",
       tech: ["Java", "JSP", "Servlets", "MySQL"],
       icon: <FaLaptopCode className="text-blue-600 text-3xl" />,
-      github: "#",
+      github: "https://github.com/vishalps08/Employee-Management-System",
     },
     {
       title: "Banking CLI Application",
@@ -20,7 +20,7 @@ export default function Projects() {
         "A Python-based banking system supporting deposits, withdrawals and transfers using JSON storage.",
       tech: ["Python"],
       icon: <FaCode className="text-green-600 text-3xl" />,
-      github: "#",
+      github: "https://github.com/vishalps08/BankAccountTransactions_Python",
     },
     {
       title: "Konkan Railway Ticket System",
@@ -36,7 +36,7 @@ export default function Projects() {
         "Admin-driven MERN application with JWT authentication, CRUD operations, protected routes, and dashboard.",
       tech: ["React", "Node.js", "Express.js", "MongoDB"],
       icon: <FaDatabase className="text-purple-600 text-3xl" />,
-      github: "#",
+      github: "https://github.com/vishalps08/personal-portfolio",
     },
   ];
 
