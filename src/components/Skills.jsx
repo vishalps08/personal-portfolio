@@ -8,54 +8,50 @@ import {
   FaDatabase,
   FaGitAlt,
 } from "react-icons/fa";
-
-// Custom Java SVG icon
-function JavaIcon() {
-  return (
-    <div className="w-10 h-10 flex items-center justify-center rounded-md bg-gray-50">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 128 128"
-        width="28"
-        height="28"
-      >
-        <path
-          fill="#007396"
-          d="M89.4 98.7c-2.3 5.8-17.2 11.4-34.4 11.4-17.2 0-31.7-4.8-34.4-11.4-1.2-2.9 1.2-6 4-4.8 4 1.7 13.5 4 30.4 4s26.4-2.3 30.4-4c2.8-1.2 5.3 1.9 4 4.8z"
-        ></path>
-        <path
-          fill="#007396"
-          d="M100.1 86.4c-2.8 7.2-21.3 13.1-45.1 13.1-23.8 0-42.3-5.9-45.1-13.1-1.3-3.3 1.4-6.7 4.8-5.4 4.8 2 16.3 5.4 40.3 5.4 24 0 35.6-3.4 40.3-5.4 3.4-1.3 6.1 2 4.8 5.4z"
-        ></path>
-      </svg>
-    </div>
-  );
-}
+import useScrollReveal from "../hooks/useScrollReveal";
 
 export default function Skills() {
+  const { ref, isVisible } = useScrollReveal();
+
   const frontend = [
-    { name: "HTML", Icon: FaHtml5 },
-    { name: "CSS", Icon: FaCss3Alt },
-    { name: "JavaScript", Icon: FaJsSquare },
+    { name: "HTML5", Icon: FaHtml5 },
+    { name: "CSS3", Icon: FaCss3Alt },
+    { name: "JavaScript (ES6+)", Icon: FaJsSquare },
     { name: "React.js", Icon: FaReact },
+    { name: "Responsive Web Design" },
   ];
 
   const backend = [
     { name: "Node.js", Icon: FaNodeJs },
     { name: "Express.js", Icon: FaNodeJs },
     { name: "Python", Icon: FaPython },
+    { name: "REST APIs" },
   ];
 
   const databases = [
     { name: "MongoDB", Icon: FaDatabase },
+    { name: "MySQL", Icon: FaDatabase },
     { name: "Oracle SQL", Icon: FaDatabase },
   ];
 
   const tools = [
     { name: "Git" },
-    { name: "JSON" },
-    { name: "REST APIs" },
+    { name: "GitHub" },
+    { name: "Postman" },
+    { name: "VS Code" },
+    { name: "Chrome DevTools" },
+    { name: "MS Excel" },
+  ];
+
+  const otherSkills = [
     { name: "CRUD Operations" },
+    { name: "API Integration" },
+    { name: "JSON" },
+    { name: "SEO Basics" },
+    { name: "Debugging" },
+    { name: "Deployment Support" },
+    { name: "Solution Architecture" },
+    { name: "Team Leadership" },
   ];
 
   function RenderIcon({ Icon }) {
@@ -67,7 +63,6 @@ export default function Skills() {
       );
     }
 
-    // If Icon is a function (custom SVG), render it
     if (typeof Icon === "function") {
       return <Icon />;
     }
@@ -81,7 +76,7 @@ export default function Skills() {
 
   return (
     <section id="skills" className="py-24 px-6">
-      <div className="max-w-5xl mx-auto">
+      <div ref={ref} className={`max-w-5xl mx-auto transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
         <h2 className="text-3xl font-bold text-gray-900 text-center">Skills</h2>
 
         <div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
@@ -111,9 +106,9 @@ export default function Skills() {
             </ul>
           </div>
 
-          {/* Databases & Tools */}
+          {/* Databases */}
           <div className="p-6 bg-white rounded-xl shadow hover:shadow-lg transition">
-            <h3 className="text-xl font-semibold mb-4">Databases & Tools</h3>
+            <h3 className="text-xl font-semibold mb-4">Databases</h3>
             <ul className="space-y-3">
               {databases.map((d) => (
                 <li key={d.name} className="flex items-center gap-4">
@@ -121,21 +116,37 @@ export default function Skills() {
                   <span className="text-gray-700 font-medium">{d.name}</span>
                 </li>
               ))}
-
-              <li className="mt-4 pt-4 border-t border-gray-100">
-                <h4 className="text-sm text-gray-500 mb-2">Other tools</h4>
-                <div className="flex flex-wrap gap-2">
-                  {tools.map((t) => (
-                    <span
-                      key={t.name}
-                      className="text-sm px-3 py-1 rounded-md bg-gray-100 text-gray-700"
-                    >
-                      {t.name}
-                    </span>
-                  ))}
-                </div>
-              </li>
             </ul>
+          </div>
+
+          {/* Tools & Platforms */}
+          <div className="p-6 bg-white rounded-xl shadow hover:shadow-lg transition">
+            <h3 className="text-xl font-semibold mb-4">Tools & Platforms</h3>
+            <div className="flex flex-wrap gap-2">
+              {tools.map((t) => (
+                <span
+                  key={t.name}
+                  className="text-sm px-3 py-1 rounded-md bg-gray-100 text-gray-700"
+                >
+                  {t.name}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          {/* Other Skills */}
+          <div className="p-6 bg-white rounded-xl shadow hover:shadow-lg transition sm:col-span-2 lg:col-span-2">
+            <h3 className="text-xl font-semibold mb-4">Other Skills</h3>
+            <div className="flex flex-wrap gap-2">
+              {otherSkills.map((s) => (
+                <span
+                  key={s.name}
+                  className="text-sm px-3 py-1 rounded-md bg-blue-50 text-blue-700"
+                >
+                  {s.name}
+                </span>
+              ))}
+            </div>
           </div>
         </div>
       </div>
