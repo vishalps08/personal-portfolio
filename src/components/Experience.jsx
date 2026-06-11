@@ -69,13 +69,13 @@ export default function Experience() {
       ],
     },
     {
-      title: "Technical Support Engineer",
-      company: "E4e Global Solutions",
-      period: "Jan 2006 – Oct 2008, May 2010 – Oct 2010",
+      title: "Technical Support Engineer (L2)",
+      company: "E4e Global Solutions Pvt. Ltd",
+      period: "May 2010 – Oct 2010",
       accent: "border-teal-500",
       dot: "bg-teal-500",
       points: [
-        "Delivered technical support for consumer clients, handling troubleshooting, issue resolution, and service coordination.",
+        "Delivered technical support for US/UK customers via phone and remote tools (LMI).",
       ],
     },
     {
@@ -86,6 +86,37 @@ export default function Experience() {
       dot: "bg-orange-500",
       points: [
         "Provided customer and technical support for storage solutions, ensuring smooth operations and client satisfaction.",
+      ],
+    },
+    {
+      title: "Senior Technical Support Engineer",
+      company: "E4e Global Solutions Pvt. Ltd",
+      period: "Oct 2007 – Nov 2008",
+      accent: "border-teal-500",
+      dot: "bg-teal-500",
+      points: [
+        "Acted as Team Leader for a 16-member email support team, managing productivity and issue resolution.",
+        "Provided Level 2 escalation support and handled complex technical queries.",
+      ],
+    },
+    {
+      title: "Escalation Engineer",
+      company: "E4e Global Solutions Pvt. Ltd",
+      period: "Jul 2007 – Oct 2007",
+      accent: "border-cyan-500",
+      dot: "bg-cyan-500",
+      points: [
+        "Resolved high-priority escalations and ensured effective communication with stakeholders.",
+      ],
+    },
+    {
+      title: "L1 Engineer",
+      company: "E4e Global Solutions Pvt. Ltd",
+      period: "Jan 2006 – Jul 2007",
+      accent: "border-sky-500",
+      dot: "bg-sky-500",
+      points: [
+        "Offered email-based technical support for Norton (Symantec) customers, maintaining high satisfaction ratings.",
       ],
     },
   ];
