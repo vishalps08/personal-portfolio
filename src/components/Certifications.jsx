@@ -33,6 +33,24 @@ export default function Certifications() {
       border: "border-yellow-200",
     },
     {
+      title: "Microsoft® Certified Technology Specialist",
+      issuer: "Windows Vista® Configuration",
+      year: "2011",
+      Icon: FaCertificate,
+      color: "text-indigo-500",
+      bg: "bg-indigo-50",
+      border: "border-indigo-200",
+    },
+    {
+      title: "Microsoft® Certified Professional",
+      issuer: "Microsoft",
+      year: "2010",
+      Icon: FaCertificate,
+      color: "text-red-500",
+      bg: "bg-red-50",
+      border: "border-red-200",
+    },
+    {
       title: "Diploma in Computer Science",
       issuer: "Completed",
       year: "2005",
@@ -49,7 +67,7 @@ export default function Certifications() {
         <h2 className="text-4xl font-bold text-gray-900">Certifications</h2>
         <div className="w-20 h-1 bg-gradient-to-r from-blue-600 to-indigo-600 rounded mx-auto mt-4 mb-16"></div>
 
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {certificates.map((cert, index) => (
             <div
               key={index}

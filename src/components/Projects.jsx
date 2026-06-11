@@ -42,10 +42,10 @@ export default function Projects() {
       github: "https://github.com/vishalps08/BankAccountTransactions_Python",
     },
     {
-      title: "Konkan Railway Ticket System",
+      title: "Konkan Railway Ticket Reservation Site",
       description:
-        "A prototype for ticket booking and search functionality built during diploma coursework.",
-      tech: ["HTML"],
+        "Final year project — a ticket reservation site for Konkan Railway that improved the efficiency of ticket booking processes.",
+      tech: ["HTML", "VBScript", "Microsoft Access"],
       icon: <FaCode className="text-orange-500 text-3xl" />,
       github: "#",
     },
